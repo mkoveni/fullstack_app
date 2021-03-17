@@ -30,6 +30,8 @@
 <script>
 import Person from "../components/Person";
 import Bus from "../Bus";
+import config from "../config";
+
 export default {
   components: { Person },
   data: () => ({
@@ -40,7 +42,7 @@ export default {
     async getPeople() {
       try {
         this.loading = true;
-        let response = await fetch("https://localhost:5001/swapi/people");
+        let response = await fetch(`${config.api.baseUrl}/swapi/people`);
         this.people = await response.json();
       } catch (e) {
         Bus.$emit("fetch:error", "Failed while fetching data");

@@ -1,0 +1,31 @@
+name: Vue
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Vue Client App
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          context: app
+          file: app/Dockerfile
+          tags: mkoveni/assess_app:latest
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}

@@ -68,6 +68,7 @@
 <script>
 import Person from "../components/Person";
 import Bus from "../Bus";
+import config from "../config";
 
 export default {
   components: { Person },
@@ -83,7 +84,7 @@ export default {
         try {
           this.searching = true;
           let response = await fetch(
-            `https://localhost:5001/search?query=${this.query}`
+            `${config.api.baseUrl}/search?query=${this.query}`
           );
           this.data = await response.json();
         } catch (error) {

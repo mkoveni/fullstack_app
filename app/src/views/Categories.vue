@@ -59,6 +59,8 @@
 
 <script>
 import Bus from "../Bus";
+import config from "../config";
+
 export default {
   data: () => ({
     loading: false,
@@ -70,7 +72,7 @@ export default {
     async getCategories() {
       try {
         this.loading = true;
-        let response = await fetch("https://localhost:5001/chuck/categories", {
+        let response = await fetch(`${config.api.baseUrl}/chuck/categories`, {
           method: "GET",
         });
 
@@ -85,7 +87,7 @@ export default {
     async getJoke(category) {
       try {
         let response = await fetch(
-          `https://localhost:5001/chuck/random/${category}`,
+          `${config.api.baseUrl}/chuck/random/${category}`,
           {
             method: "GET",
           }
