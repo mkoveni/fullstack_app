@@ -2,7 +2,7 @@
 
 ## .Net 5, Vuejs
 
-This repository demonstrates how to build backend API services using the laravel framework. it also demonstrates how to consume API services from Single Page Application. The project utilizes github actions to build, test and publish the applications as images on dockerhub.
+This repository demonstrates how to build backend API services using  .NET 5. it also demonstrates how to consume API services from Single Page Application. The project utilizes github actions to build, test and publish the applications as images on dockerhub.
 
 Api demo here [api demo](https://assess.rivalani.dev/swagger)
 
