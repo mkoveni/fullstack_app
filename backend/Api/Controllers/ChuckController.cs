@@ -21,9 +21,9 @@ namespace Api.Controllers
         }
 
         [HttpGet("categories")]
-        public async Task<List<string>> GetCategories()
+        public async Task<IActionResult> GetCategories()
         {
-            return await _getCategories.Handle();
+            return Ok(await _getCategories.Handle());
         }
 
         [HttpGet("random/{category}")]
