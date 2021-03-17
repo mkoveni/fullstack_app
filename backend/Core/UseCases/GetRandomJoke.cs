@@ -15,6 +15,7 @@ namespace Core.UseCases
         public GetRandomJoke(IChuckRepository chuckRepository, ILogger<GetRandomJoke> logger)
         {
             _chuckRepository = chuckRepository;
+            _logger = logger;
         }
         public async Task<ChuckNorrisJoke> Handle(string category)
         {

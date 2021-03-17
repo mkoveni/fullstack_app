@@ -15,6 +15,7 @@ namespace Core.UseCases
         public GetStarWarsCharacters(ISwapiRepository swapiRepository, ILogger<GetStarWarsCharacters> logger)
         {
             _swapiRepository = swapiRepository;
+            _logger = logger;
         }
         public async Task<List<StarWarCharacter>> Handle()
         {

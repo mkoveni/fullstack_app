@@ -15,6 +15,7 @@ namespace Core.UseCases
         public GetCategories(IChuckRepository chuckRepository, ILogger<GetCategories> logger)
         {
             _chuckRepository = chuckRepository;
+            _logger = logger;
         }
 
         public async Task<List<string>> Handle()
