@@ -36,6 +36,6 @@ jobs:
           push: true
           context: backend
           file: backend/Dockerfile
-          tags: rivalani/assess_backend:latest
+          tags: mkoveni/assess_backend:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
